@@ -22,7 +22,11 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('todos', [TodoController::class, 'index'])->name('index');
+
+// Route::resource('todos', TodoController::class);
+Route::get('todos', [TodoController::class, 'index'])->name('todos.index');
 Route::post('todos/store', [TodoController::class, 'store'])->name('todos.store');
 Route::get('todos/create', [TodoController::class, 'create'])->name('todos.create');
-Route::get('todos/edit/{id}', [TodoController::class, 'edit/{id}'])->name('todos.edit');
+Route::get('todos/{id}/edit', [TodoController::class, 'edit'])->name('todos.edit');
+Route::put('todos/update', [TodoController::class, 'update'])->name('todos.update');
+Route::delete('todos/destroy', [TodoController::class, 'destroy'])->name('todos.destroy');
