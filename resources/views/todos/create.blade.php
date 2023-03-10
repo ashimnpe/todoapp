@@ -5,7 +5,12 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">{{ __('Create Task') }}</div>
+                    <div class="card-header">{{ __('Create Task') }}
+                    
+                        <div style="float: right;">
+                            <a href="{{ url()->previous() }}" class="btn btn-sm btn-secondary">Go Back</a>
+                        </div>
+                    </div>
 
                     <div class="card-body">
 
@@ -18,6 +23,8 @@
                                 </ul>
                             </div>
                         @endif
+
+                        
                         <form method="POST" action="{{ route('todos.store') }}">
                             @csrf
                             <div class="input-group mb-3">
