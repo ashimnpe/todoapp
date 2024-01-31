@@ -115,6 +115,14 @@
                             @enderror
                         </span>
                     </div>
+                    <div class="mb-3" hidden>
+                        {!! Form::select('status', config('dropdown.status'), '0', ['class' => 'form-control']) !!}
+                        <span class="text-danger">
+                            @error('status')
+                                {{ $message }}
+                            @enderror
+                        </span>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

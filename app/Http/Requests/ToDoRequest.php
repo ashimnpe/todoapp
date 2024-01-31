@@ -23,6 +23,7 @@ class ToDoRequest extends FormRequest
     {
         return [
             'title' => 'required|string',
+            'status' => 'required'
         ];
     }
 }
